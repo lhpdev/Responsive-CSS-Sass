@@ -26,14 +26,16 @@ main {
 }
 
 .backdrop {
-  position: fixed;
   display: none;
+  position: fixed;
+  opacity: 0;
   top: 0;
   left: 0;
   z-index: 100;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s linear;
 }
 
 .main-header {
@@ -84,6 +86,7 @@ main {
 
 .main-nav {
   display: none;
+  transform: translateX(-3rem);
 }
 
 .main-nav__items {
@@ -169,7 +172,9 @@ main {
 }
 
 .mobile-nav {
-  display: none;
+  transform: translateX(-100%);
+  /* display: none; */
+  transition: transform 300ms ease-out;
   position: fixed;
   z-index: 101;
   top: 0;
@@ -229,6 +234,8 @@ main {
 
 .open {
     display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 @media (min-width: 40rem) {
